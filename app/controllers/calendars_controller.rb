@@ -4,7 +4,4 @@ class CalendarsController < ApplicationController
     @calendars = Calendar.all
   end
 
-  def new
-  end
-
 end

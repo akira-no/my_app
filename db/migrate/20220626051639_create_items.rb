@@ -1,8 +1,8 @@
 class CreateItems < ActiveRecord::Migration[6.0]
   def change
     create_table :items do |t|
-      t.string :category
-      t.string :memo
+      t.string      :item_name,  null: false
+      t.references  :calendar,   null: false, foreign_key: true
 
       t.timestamps
     end
