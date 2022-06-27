@@ -1,5 +1,5 @@
 class Plan < ApplicationRecord
-  # belongs_to :user
+  belongs_to :user
 
   validates :start_time, presence: true
 end

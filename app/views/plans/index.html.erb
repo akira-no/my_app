@@ -1,5 +1,5 @@
 <%# 商品登録フォーム %>
-<%= form_with model: @plan, local: true do |f| %>
+<%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
   かて<%= f.text_area :category %>
   item<%= f.text_area :item %>
   <%= f.datetime_select :start_time %>
