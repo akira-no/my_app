@@ -1,6 +1,7 @@
 <%# 商品登録フォーム %>
 <%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
   かて<%= f.text_area :category %>
+  タグ<%= f.text_field :tag_name %>
   item<%= f.text_area :item %>
   <%= f.date_select :start_time %>
   おす<%= f.submit %>
@@ -8,7 +9,7 @@
 
 <% @plans.each do |plan| %>
   <%# <%= link_to plan.item, edit_plan_path(plan.id) %> 
-  <%= plan.item %>
+  <%= @plan.tags&.first&.tag_name %>
 <% end %>
 
 

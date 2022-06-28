@@ -4,6 +4,7 @@ class PlansController < ApplicationController
   def index
     @plans = Plan.all
     @plan_tag = PlanTag.new
+    @plan = Plan.new
   end
 
   def new
@@ -45,7 +46,7 @@ class PlansController < ApplicationController
   private
 
   def plan_tag_params
-    params.require(:plan_tag).permit(:category, :item).merge(user_id: current_user.id)
+    params.require(:plan_tag).permit(:category, :item, :tag_name).merge(user_id: current_user.id)
   end
 
 end
