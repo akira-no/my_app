@@ -2,11 +2,12 @@
 <%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
   かて<%= f.text_area :category %>
   item<%= f.text_area :item %>
-  <%= f.datetime_select :start_time %>
+  <%= f.date_select :start_time %>
   おす<%= f.submit %>
 <% end %>
 
 <% @plans.each do |plan| %>
+  <%# <%= link_to plan.item, edit_plan_path(plan.id) %> 
   <%= plan.item %>
 <% end %>
 
