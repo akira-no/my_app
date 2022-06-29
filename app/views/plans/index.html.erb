@@ -1,15 +1,45 @@
 <%= render "shared/header" %>
 
 <%# 商品登録フォーム %>
-<%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
-  かて<%= f.text_area :category %>
-  <div class="tag-field">
-  タグ<%= f.text_field :tag_name %>
-  <div id="search-result"></div>
-  item<%= f.text_area :item %>
-  <%= f.date_select :start_time %>
-  おす<%= f.submit %>
-<% end %>
+<% unless user_signed_in? %>
+  <div class = "signed-out-ver">
+    <%= month_calendar do |date| %>
+      <%= date.day %>
+    <% end %>
+  </div>
+<% else %>
+  <div class = "main-full">
+    <div class = "search-main">
+      <%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
+        <div class = "register-text">
+          カテゴリー
+        </div>
+        <%= f.text_field :category, class: "field-text", placeholder: "日用品" %>
+        <div class = "register-text">
+          タグ
+        </div>
+        <%= f.text_field :tag_name, class: "field-text", placeholder: "シャンプー" %>
+        <div id="search-result">
+        </div>
+        <div class = "register-text">
+          アイテム
+        </div>
+        <%= f.text_field :item, class: "field-text", placeholder: "パンテーン" %>
+        <div class = "register-day">
+          <%= f.date_select :start_time %>
+          <%= f.submit value: " 登 録 " %>
+        </div>
+      <% end %>
+    </div>
+    <div class = "calendar-main">
+      <%= month_calendar do |date| %>
+        <%= date.day %>
+      <% end %>
+    </div>
+  </div>
+
+
+
 
 <% @plans.each do |plan| %>
   <%# <%= link_to plan.item, edit_plan_path(plan.id) %> 
@@ -18,12 +48,6 @@
 
 
 
-
-
-<%# カレンダー表示 %>
-<%= month_calendar do |date| %>
-  <%= date.day %>
-<% end %>
 
 
 <h5><%= link_to '検索', searchtag_plans_path %></h5>
@@ -35,4 +59,5 @@
   <%= f.submit '検索' %>
 <% end %>
 
+<% end %>
 <%= render "shared/footer" %>

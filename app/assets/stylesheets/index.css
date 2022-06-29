@@ -9,3 +9,62 @@
   padding: 5px;
   font-size: 12px;
 }
+
+.signed-out-ver{
+  height: 500px;
+  width: 100vw;
+  background-color: rgb(244, 131, 131)
+}
+
+.main-full{
+  display: flex;
+}
+
+/* 左側 */
+.search-main{
+  height: 500px;
+  width: 250px;
+  padding: 0 0 0 20px;
+  background-color: rgb(247, 241, 241);
+}
+
+.register-text{
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  font-size: 20px;
+  background-color: rgb(245, 211, 216);
+}
+
+.field-text{
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  font-size: 15px;
+  padding: 0 0 0 20px;
+  margin: 0 0 0 30px;
+  background-color: rgb(184, 254, 254);
+}
+
+.register-day{
+  height: 50px;
+  width: 100%;
+  padding: 10px 0 0 5px;
+  background-color: antiquewhite;
+  font-size: 14px;
+}
+
+
+
+/* カレンダー */
+.simple-calendar{
+  height: 500px;
+  width: calc(100vw - 250px);
+  padding: 20px 0 0 0;
+  background-color: rgb(200, 200, 195);
+}
+
+.calendar-heading{
+  text-align: center;
+  background-color: rgb(225, 229, 223);
+}
