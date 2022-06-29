@@ -1,0 +1,34 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<div class = "header-main">
+  <%= search_form_for @q, url: searchtag_plans_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.text_field :item_cont, placeholder: 'item' %>
+      <%= f.submit '検索' %>
+    </div>
+  <% end %>
+  <div class = "header-title">
+    memoapp
+  </div>
+  <div class = "header-right">
+    <% if user_signed_in? %>
+      <div class = "info-left">
+        <%= link_to current_user.nickname, "/users/#{current_user.id}" %>
+      </div>
+      <div class = "info-right">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+      </div>
+    <% else %>
+      <div class = "info">
+        <div class = "info-up">
+          ログインを押して
+        </div>
+        <div class = "info-down">
+          新規登録してね
+        </div>
+      </div>
+      <div class = "info-right">
+        <%= link_to "ログイン", new_user_session_path, class: "login" %>
+      </div>
+    <% end %>
+  </div>
+</div>
