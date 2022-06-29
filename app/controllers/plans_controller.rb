@@ -5,6 +5,8 @@ class PlansController < ApplicationController
     @plans = Plan.all
     @plan_tag = PlanTag.new
     @plan = Plan.new
+    @q = Plan.ransack(params[:q])
+    @plans = @q.result
   end
 
   def new
@@ -48,6 +50,12 @@ class PlansController < ApplicationController
       tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"])
       render json:{ keyword: tag }
     end
+
+    def searchtag
+      @q = Plan.ransack(params[:q])
+      @plans = @q.result
+    end
+
 
   private
 

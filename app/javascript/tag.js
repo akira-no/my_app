@@ -30,4 +30,3 @@ const tagNameInput = document.querySelector("#plan_tag_tag_name");
     });
   };
 });
-// console.log("ok");

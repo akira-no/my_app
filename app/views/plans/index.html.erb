@@ -1,3 +1,11 @@
+<h5><%= link_to '検索', searchtag_plans_path %></h5>
+<%= search_form_for @q, url: searchtag_plans_path, html: {id: "detailed-search-form"} do |f| %>
+  <div class="search-field">
+    <%= f.text_field :item_cont, placeholder: '商品名' %>
+  </div>
+  
+  <%= f.submit '検索' %>
+<% end %>
 <%# 商品登録フォーム %>
 <%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
   かて<%= f.text_area :category %>

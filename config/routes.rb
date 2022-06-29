@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :plans, only: [:index, :new, :create] do
     collection do
       get 'search'
+      get 'searchtag'
     end
   end
 end
