@@ -5,7 +5,7 @@ const tagNameInput = document.querySelector("#plan_tag_tag_name");
     inputElement.addEventListener("input", () => {
       const keyword = document.getElementById("plan_tag_tag_name").value;
       const XHR = new XMLHttpRequest();
-      XHR.open("GET", `/plans/search/?keyword=${keyword}`, true);
+      XHR.open("GET", `/plans/search_text/?keyword=${keyword}`, true);
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {

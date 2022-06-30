@@ -7,6 +7,7 @@ class PlansController < ApplicationController
     @plan = Plan.new
     @q = Plan.ransack(params[:q])
     @plans = @q.result
+    @tags = Tag.all
   end
 
   def new
@@ -45,7 +46,7 @@ class PlansController < ApplicationController
     #   end
     # end
 
-    def search
+    def search_text
       return nil if params[:keyword] == ""
       tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"])
       render json:{ keyword: tag }
