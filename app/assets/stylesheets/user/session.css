@@ -1,0 +1,66 @@
+.devise-main{
+  width: 100vw;
+  text-align: center;
+}
+
+.session-main{
+  height: 300px;
+  width:100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(234, 205, 205);
+}.session-main h2{
+  font-size: 40px;
+}
+
+.session-left{
+  width: 40%;
+  padding: 0 0 0 60px;
+  background-color: rgb(242, 255, 240);
+}
+
+.session-right{
+  width: 50%;
+  background-color: rgb(240, 240, 255);
+}
+
+.field-main{
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  background-color: yellowgreen;
+  display: flex;
+}
+
+.field-left{
+  height: 100%;
+  width: 55%;
+  font-size: 25px;
+  text-align: right;
+  padding: 0 20px 0 0;
+  background-color: antiquewhite;
+}
+.field-right{
+  height: 100%;
+  width: 40%;
+  text-align: left;
+  background-color: rgb(49, 43, 34);
+}
+
+
+.registration-main{
+  width: 100%;
+  background-color: rgb(174, 174, 226);
+}
+
+.actions{
+  text-align: right;
+  padding: 0 100px 0 0;
+}
+
+.devise-footer{
+  height: 50px;
+  width: 100vw;
+  text-align: center;
+  background-color: aliceblue;
+}
