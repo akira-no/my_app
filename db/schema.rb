@@ -10,19 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_28_032351) do
+ActiveRecord::Schema.define(version: 2022_06_30_074233) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "plan_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "plan_id"
     t.bigint "tag_id"
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_plan_tag_relations_on_category_id"
     t.index ["plan_id"], name: "index_plan_tag_relations_on_plan_id"
     t.index ["tag_id"], name: "index_plan_tag_relations_on_tag_id"
   end
 
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category"
     t.string "item", null: false
     t.datetime "start_time", null: false
     t.bigint "user_id", null: false
@@ -50,6 +57,7 @@ ActiveRecord::Schema.define(version: 2022_06_28_032351) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "plan_tag_relations", "categories"
   add_foreign_key "plan_tag_relations", "plans"
   add_foreign_key "plan_tag_relations", "tags"
   add_foreign_key "plans", "users"

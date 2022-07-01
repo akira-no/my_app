@@ -1,4 +1,6 @@
-var checked = [];
-$(".js-filter-form :checkbox").on("click", function (){
-
-})
+function formSwitch() {
+  categorySearch = document.getElementsByName("maker")
+    if (categorySearch[0].checked) {
+      document.getElementById("tagList").style.d = "";
+    } 
+}

@@ -8,6 +8,7 @@ class PlansController < ApplicationController
     @q = Plan.ransack(params[:q])
     @plans = @q.result
     @tags = Tag.all
+    @categories = Category.all
   end
 
   def new
@@ -61,7 +62,7 @@ class PlansController < ApplicationController
   private
 
   def plan_tag_params
-    params.require(:plan_tag).permit(:category, :item, :tag_name).merge(user_id: current_user.id)
+    params.require(:plan_tag).permit(:category_name, :item, :tag_name).merge(user_id: current_user.id)
   end
 
 end
