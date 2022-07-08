@@ -7,25 +7,32 @@
     memoapp
   </div>
   <div class = "header-right">
-    <% if user_signed_in? %>
-      <div class = "info-left">
-        <%= link_to current_user.nickname, "/users/#{current_user.id}" %>
+   <% if user_signed_in? %>
+    <div class = "info-left" id = "user-pulldown">
+       <%= current_user.nickname %>
+      <ul class = "user-menu hidden" id = "user-pulldown-list">
+        <li><%= link_to "マイページ", "users/#{current_user.id}" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
+      </ul>
+    </div>
+
+
+
+    <div class = "info-right">
+     <%# <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %> %>
+    </div>
+   <% else %>
+    <div class = "info">
+      <div class = "info-up">
+       ログインを押して
       </div>
-      <div class = "info-right">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+      <div class = "info-down">
+        新規登録してね
       </div>
-    <% else %>
-      <div class = "info">
-        <div class = "info-up">
-          ログインを押して
-        </div>
-        <div class = "info-down">
-          新規登録してね
-        </div>
-      </div>
-      <div class = "info-right">
-        <%= link_to "ログイン", new_user_session_path, class: "login" %>
-      </div>
-    <% end %>
+    </div>
+    <div class = "info-right">
+     <%= link_to "ログイン", new_user_session_path, class: "login" %>
+    </div>
+   <% end %>
   </div>
 </div>
