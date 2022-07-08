@@ -5,22 +5,26 @@ function pullDown() {
   const pullDownParents = document.getElementById("user-pulldown-list");
 
   pullDownButton.addEventListener('mouseover', function(){
-    this.setAttribute("style", "color:yellow;");
+    this.setAttribute("style", "color: yellow;");
+    pullDownParents.setAttribute("style", "visibility: visible;");
   });
+  
   pullDownButton.addEventListener('mouseout', function(){
-    this.removeAttribute("style", "color:yellow;");
+    pullDownButton.removeAttribute("style", "color: yellow;");
+    pullDownParents.removeAttribute("style", "visibility: visible;");
   });
-  pullDownButton.addEventListener('click', function(){
 
-    if (pullDownParents.getAttribute("style") == "display: block;"){
-      pullDownParents.removeAttribute("style", "display: block;");
-    } else{
-      pullDownParents.setAttribute("style", "display: block;");
-    };
-  });
+  // ここから
+  // pullDownButton.addEventListener('click', function(){
+
+    // if (pullDownParents.getAttribute("style") == "display: block;"){
+    //   pullDownParents.removeAttribute("style", "display: block;");
+    // } else{
+    //   pullDownParents.setAttribute("style", "display: block;");
+    // };
+    // ここまで呼び
   
   
 };
-
 window.addEventListener('load', pullDown)
 // console.log("pulldown");
