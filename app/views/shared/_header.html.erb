@@ -1,11 +1,8 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <div class = "header-main">
-  <%= search_form_for @q, url: searchtag_plans_path, html: {id: "detailed-search-form"} do |f| %>
-    <div class="search-field">
-      <%= f.text_field :item_cont, placeholder: 'item' %>
-      <%= f.submit '検索' %>
-    </div>
-  <% end %>
+  <div class = "header-left">
+    新 規 登 録
+  </div>
   <div class = "header-title">
     memoapp
   </div>
