@@ -32,31 +32,37 @@
       <% end %>
     </div>
     <div class = "calendar-main">
-      <%= month_calendar do |date| %>
+      <%= month_calendar events: @plans do |date, plans| %>
         <%= date.day %>
+
+        <% plans.each do |plan| %>
+         <%= link_to plan.item, plans_path %>
+        <% end %>
       <% end %>
     </div>
   </div>
   <%# /商品登録フォーム %>
 
   <%# 検索フォーム %>
-  <form>
+  <%# <form> %>
     <% @categories.each do |category| %>
       <div class = "form-check">
-        <input class = "form-check-input" type = "radio" name = "maker" value = #{category_name} onclick = "formSwitch()">
+        <input class = "form-check-input" type = "radio" name = "maker'+ input'" value = "category_name">
         <label class = "form-check-label"><%= category.category_name %></label>
       </div>
       <% category.tags.uniq.each do |tag| %>
         <div id = "tagList">
           <div class = "form-check">
-            <input class = "form-check-input" type = "checkbox" value = #{tag_name} onclick = "formSwitch()" checked>
+            <input class = "form-check-input" type = "checkbox" value = "tag_name" checked>
             <label class = "form-check-label"><%= tag.tag_name %></label>
           </div>
         </div>
       <% end %>
     <% end %>
-  </form>
+  <%# </form> %>
 
+<label><input type="checkbox" id="check" onclick="checkdiv(this,'checkBox')" /><%= tag.tag_name %></label>
+<div id="checkBox" style="display:none;">表示！</div>
 
 
 
