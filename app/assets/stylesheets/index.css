@@ -28,13 +28,13 @@
   background-color: rgb(247, 241, 241);
 }
 
-.register-text{
+/* .register-text{
   height: 50px;
   width: 100%;
   line-height: 50px;
   font-size: 20px;
   background-color: rgb(245, 211, 216);
-}
+} */
 
 .field-text{
   height: 50px;
@@ -78,4 +78,10 @@
 
 #tagList{
   display: none;
+}
+
+.gyagu{
+  height: 5000px;
+  width: 100vw;
+  background-color: blue;
 }

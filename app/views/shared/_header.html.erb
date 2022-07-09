@@ -3,6 +3,37 @@
   <div class = "header-left">
     新 規 登 録
   </div>
+  <%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
+   <ul class = "register-full">
+    <li class = "register-text">カテゴリー</li>
+    <li><%= f.text_field :category_name, class: "register-field", placeholder: "日用品" %></li>
+    <li class = "register-text">タグ</li>
+    <li><%= f.text_field :tag_name, class: "register-field", placeholder: "シャンプー" %></li>
+    <li class = "register-text">アイテム</li>
+    <li><%= f.text_area :item, class: "register-field", placeholder: "詳細" %></li>
+    <li class = "date-field"><%= f.date_select :start_time %></li>
+    <li><%= f.submit value: " 登 録 " %></li>
+   </ul>
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class = "header-title">
     memoapp
   </div>
