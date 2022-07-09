@@ -6,10 +6,10 @@
   <div class = "header-title">
     memoapp
   </div>
-  <div class = "header-right", id = "user-pulldown">
+  <div class = "header-right", id = "user">
    <% if user_signed_in? %>
-    <%= link_to current_user.nickname, "users/#{current_user.id}" %>
-    <ul class = "user-menu" id = "user-pulldown-list">
+    <%= link_to current_user.nickname, "users/#{current_user.id}", id: "user-name" %>
+    <ul class = "user-menu">
       <li><%= link_to "マイページ", "users/#{current_user.id}" %></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
     </ul>

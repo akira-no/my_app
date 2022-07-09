@@ -38,29 +38,24 @@ a{
   text-align: center;
   font-size: 20px;
   background-color: red;
-  /* position: relative; */
+  position: relative;
 }
 
-.user-name{
+/* .user-name{
   cursor: pointer;
-}
+} */
 
 .user-menu{
   width: 100%;
   background-color: blueviolet;
-  /* position: absolute; */
-  /* display: none; */
-  /* transform: translateY(-500px); */
-  transition: .5s;
-  visibility: hidden;
-  opacity: 1;
+  position: absolute;
 }
 
-/* .open{
-  transform: translateY(20px);
-} */
-/* 
-.hidden{
-  display: none;
-} */
+.user-menu li{
+  height: 0;
+  line-height: 40px;
+  overflow: hidden;
+  transition: .5s;
+}
+
 

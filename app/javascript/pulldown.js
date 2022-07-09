@@ -1,30 +1,24 @@
 function pullDown() {
 
   // ユーザー管理
-  const pullDownButton = document.getElementById("user-pulldown");
-  const pullDownParents = document.getElementById("user-pulldown-list");
+  const userPullDown = document.getElementById("user");
+  const userMenu = document.querySelectorAll(".user-menu li");
+  const userMenuPullDown = Array.prototype.slice.call(userMenu,0);
+  const userName = document.getElementById("user-name");
 
-  pullDownButton.addEventListener('mouseover', function(){
-    this.setAttribute("style", "color: yellow;");
-    pullDownParents.setAttribute("style", "visibility: visible;");
+  userMenuPullDown.forEach(function (element) {
+    userPullDown.addEventListener("mouseover", function() {
+      userName.setAttribute("style", "color: yellow;")
+      element.setAttribute("style", "overflow: visible; height: 40px;");
+    },false);
+    userPullDown.addEventListener("mouseout", function() {
+      userName.removeAttribute("style", "color: yellow;")
+      element.removeAttribute("style", "overflow: visible; height: 40px;");
+    });
   });
-  
-  pullDownButton.addEventListener('mouseout', function(){
-    pullDownButton.removeAttribute("style", "color: yellow;");
-    pullDownParents.removeAttribute("style", "visibility: visible;");
-  });
 
-  // ここから
-  // pullDownButton.addEventListener('click', function(){
-
-    // if (pullDownParents.getAttribute("style") == "display: block;"){
-    //   pullDownParents.removeAttribute("style", "display: block;");
-    // } else{
-    //   pullDownParents.setAttribute("style", "display: block;");
-    // };
-    // ここまで呼び
-  
   
 };
+
+  
 window.addEventListener('load', pullDown)
-// console.log("pulldown");
