@@ -22,18 +22,22 @@ a{
   position: relative;
   cursor: pointer;
 }
-
 .register-full{
+  height: 0;
   width: 200px;
   position: absolute;
   top: 60px;
   left: 0;
   background-color: yellow;
 }
-
 .register-full li{
   height: 30px;
+  line-height: 40px;
   text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  top: 50%;
+  transition: .5s;
 }
 .register-text{
   font-size: 20px;
@@ -44,8 +48,12 @@ a{
   font-size: 14px;
   padding: 0 10px;
 }
+.register-area{
+  font-size: 20px;
+  margin: 10px 0 20px 0;
+}
 .date-field{
-  margin: 40px 0 0 0;
+  margin: 20px 0 5px 0;
 }
 
 .header-title{
@@ -67,13 +75,11 @@ a{
   background-color: red;
   position: relative;
 }
-
 .user-menu{
   width: 100%;
   background-color: blueviolet;
   position: absolute;
 }
-
 .user-menu li{
   height: 0;
   line-height: 40px;

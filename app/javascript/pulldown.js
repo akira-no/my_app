@@ -17,7 +17,29 @@ function pullDown() {
     });
   });
 
-  
+  // 新規登録
+  const registerPullDown = document.getElementById("register");
+  const registerMenu = document.querySelectorAll(".register-full li");
+  const registerMenuPullDown = Array.prototype.slice.call(registerMenu,0);
+  const registerMain = document.getElementById("register-main");
+
+  registerPullDown.addEventListener("click", function() {
+    console.log("ok")
+    if (registerPullDown.getAttribute("style") == "background-color: aqua;"){
+      registerPullDown.removeAttribute("style", "background-color: aqua;");
+      registerMain.removeAttribute("style", "height: 300px;");
+      registerMenuPullDown.forEach(function (element) {
+        element.removeAttribute("style", "visibility: visible; top: 100%; opacity: 1;");
+      });
+     } else {
+      registerPullDown.setAttribute("style", "background-color: aqua;");
+      registerMain.setAttribute("style", "height: 400px;");
+      registerMenuPullDown.forEach(function (element) {
+        element.setAttribute("style", "visibility: visible; top: 100%; opacity: 1;");
+      });
+    };
+  });
+
 };
 
   
