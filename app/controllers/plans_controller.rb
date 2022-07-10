@@ -6,7 +6,7 @@ class PlansController < ApplicationController
     @plan_tag = PlanTag.new
     @plan = Plan.new
     @q = Plan.ransack(params[:q])
-    @plans = @q.result
+    @plans_search = @q.result
     @tags = Tag.all
     @categories = Category.all
   end
@@ -53,7 +53,7 @@ class PlansController < ApplicationController
       render json:{ keyword: tag }
     end
 
-    def searchtag
+    def search
       @q = Plan.ransack(params[:q])
       @plans = @q.result
     end

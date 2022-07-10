@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 
-<%# 商品登録フォーム %>
 <% unless user_signed_in? %>
   <div class = "signed-out-ver">
     <%= month_calendar do |date| %>
@@ -9,46 +8,13 @@
   </div>
 <% else %>
 
-  <div class = "main-full">
-    <div class = "search-main">
-      <%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
-        <div class = "register-text">
-          カテゴリー
-        </div>
-        <%= f.text_field :category_name, class: "field-text", placeholder: "日用品" %>
-        <div class = "register-text">
-          タグ
-        </div>
-        <%= f.text_field :tag_name, class: "field-text", placeholder: "シャンプー" %>
-        <div id="search-result">
-        </div>
-        <div class = "register-text">
-          アイテム
-        </div>
-        <%= f.text_field :item, class: "field-text", placeholder: "パンテーン" %>
-        <div class = "register-day">
-          <%= f.date_select :start_time %>
-          <%= f.submit value: " 登 録 " %>
-        </div>
-      <% end %>
-    </div>
-    <div class = "calendar-main">
-      <%= month_calendar events: @plans do |date, plans| %>
-        <%= date.day %>
-
-        <% plans.each do |plan| %>
-         <%= link_to plan.item, plans_path %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <%# /商品登録フォーム %>
-
   <%# 検索フォーム %>
   <%# <form> %>
-    <% @categories.each do |category| %>
+  <div class = "main-full">
+    <div class = "search-main">
+     <% @categories.each do |category| %>
       <div class = "form-check">
-        <input class = "form-check-input" type = "radio" name = "maker'+ input'" value = "category_name">
+        <input class = "form-check-input" type = "radio" name = "maker" value = "category_name">
         <label class = "form-check-label"><%= category.category_name %></label>
       </div>
       <% category.tags.uniq.each do |tag| %>
@@ -59,11 +25,26 @@
           </div>
         </div>
       <% end %>
-    <% end %>
+     <% end %>
+     <label><input type="checkbox" id="check" onclick="checkdiv(this,'checkBox')" /><%= tag.tag_name %></label>
+     <div id="checkBox" style="display:none;">表示！</div>
+    </div>
   <%# </form> %>
 
-<label><input type="checkbox" id="check" onclick="checkdiv(this,'checkBox')" /><%= tag.tag_name %></label>
-<div id="checkBox" style="display:none;">表示！</div>
+
+<%# カレンダー %>
+    <div class = "calendar-main">
+      <%= month_calendar events: @plans do |date, plans| %>
+        <%= date.day %>
+
+        <% plans.each do |plan| %>
+         <%= link_to plan.item, plans_path %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
 
 
 
@@ -81,20 +62,14 @@
 
 
 
-<h5><%= link_to '検索', searchtag_plans_path %></h5>
-<%= search_form_for @q, url: searchtag_plans_path, html: {id: "detailed-search-form"} do |f| %>
-  <div class="search-field">
-    <%= f.label :item_cont, placeholder: '商品名' %>
-  </div>
-  
-  <%= f.submit '検索' %>
-<% end %>
- <%= search_form_for @q, url: searchtag_plans_path, html: {id: "detailed-search-form"} do |f| %>
+
+ <%= search_form_for @q, url: plans_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-field">
-      <%= f.text_field :item_cont, placeholder: 'item' %>
+      <%= f.text_field :item_cont, placeholder: '詳細で検索' %>
       <%= f.submit '検索' %>
     </div>
   <% end %>
+  <%= render "search" %>
 
 <% end %>
 <%= render "shared/footer" %>

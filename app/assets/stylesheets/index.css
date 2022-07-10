@@ -1,66 +1,24 @@
-#search-result{
-  width: 30%;
-}
-
-.child{
-  margin: 5px;
-  border: 1px solid #dedede;
-  background-color: #F4F4F4;
-  padding: 5px;
-  font-size: 12px;
-}
-
-.signed-out-ver{
-  height: 500px;
-  width: 100vw;
-  background-color: rgb(244, 131, 131)
-}
-
 .main-full{
+  width: 100vw;
   display: flex;
 }
 
 /* 左側 */
 .search-main{
   height: 500px;
-  width: 250px;
+  width: 200px;
   padding: 0 0 0 20px;
   background-color: rgb(247, 241, 241);
 }
-
-/* .register-text{
-  height: 50px;
-  width: 100%;
-  line-height: 50px;
-  font-size: 20px;
-  background-color: rgb(245, 211, 216);
-} */
-
-.field-text{
-  height: 50px;
-  width: 200px;
-  line-height: 50px;
-  font-size: 15px;
-  padding: 0 0 0 20px;
-  margin: 0 0 0 30px;
-  background-color: rgb(184, 254, 254);
-}
-
-.register-day{
-  height: 50px;
-  width: 100%;
-  padding: 10px 0 0 5px;
-  background-color: antiquewhite;
-  font-size: 14px;
-}
-
 .search-field{
   height: 100%;
-  width: 400px;
+  width: 200px;
   line-height: 60px;
   padding: 0 0 0 25px;
   background-color: rgb(210, 234, 242);
 }
+
+
 
 
 /* カレンダー */
@@ -80,8 +38,19 @@
   display: none;
 }
 
-.gyagu{
-  height: 5000px;
-  width: 100vw;
-  background-color: blue;
-}
+
+  /* .signed-out-ver{
+    height: 500px;
+    width: 100vw;
+    background-color: rgb(244, 131, 131) */ 
+  /* #search-result{
+    width: 30%;
+  }
+  
+  /* .child{
+    margin: 5px;
+    border: 1px solid #dedede;
+    background-color: #F4F4F4;
+    padding: 5px;
+    font-size: 12px;
+  } */

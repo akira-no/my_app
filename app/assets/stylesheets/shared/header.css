@@ -10,6 +10,8 @@ a{
   height: 60px;
   width: 100vw;
   display: flex;
+  position: sticky;
+  top: 0;
 }
 
 .header-left{
