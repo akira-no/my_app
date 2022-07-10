@@ -7,6 +7,9 @@ class PlansController < ApplicationController
     @plan = Plan.new
     @q = Plan.ransack(params[:q])
     @plans_search = @q.result
+    unless params[:q].blank?
+      render json: { post: @plans_search }
+    end
     @tags = Tag.all
     @categories = Category.all
   end
@@ -26,13 +29,13 @@ class PlansController < ApplicationController
       render :index
     end
   end
-
-    # def edit
+  
+  # def edit
     #   @plan = Plan.find(params[:id])
     #   plan_attributes = @plan.attributes
     #   @plan_tag = PlanTag.new(plan_attributes)
     # end
-
+    
     # def update
     #   @plan_tag = PlanTag.new(plan_tag_params)
     #   @plans = Plan.all
@@ -55,7 +58,8 @@ class PlansController < ApplicationController
 
     def search
       @q = Plan.ransack(params[:q])
-      @plans = @q.result
+      plans = @q.result
+      render json:{render: plans}
     end
 
 

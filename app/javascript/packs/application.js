@@ -10,6 +10,8 @@ require("channels")
 require("../tag")
 require("../checkbox")
 require("../pulldown")
+require("../search")
+require("jquery")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

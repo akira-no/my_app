@@ -24,7 +24,6 @@ function pullDown() {
   const registerMain = document.getElementById("register-main");
 
   registerPullDown.addEventListener("click", function() {
-    console.log("ok")
     if (registerPullDown.getAttribute("style") == "background-color: aqua;"){
       registerPullDown.removeAttribute("style", "background-color: aqua;");
       registerMain.removeAttribute("style", "height: 300px;");

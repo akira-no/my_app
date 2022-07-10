@@ -11,6 +11,16 @@
   <%# 検索フォーム %>
   <%# <form> %>
   <div class = "main-full">
+   <%= search_form_for @q, url: plans_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+     <%= f.text_field :item_cont, placeholder: '詳細で検索', class: "search-text", id: "search-text" %>
+     <%= f.submit '検索', id: "submit" %>
+    </div>
+   <% end %>
+
+
+
+  
     <div class = "search-main">
      <% @categories.each do |category| %>
       <div class = "form-check">
@@ -62,14 +72,8 @@
 
 
 
-
- <%= search_form_for @q, url: plans_path, html: {id: "detailed-search-form"} do |f| %>
-    <div class="search-field">
-      <%= f.text_field :item_cont, placeholder: '詳細で検索' %>
-      <%= f.submit '検索' %>
-    </div>
-  <% end %>
+  <div class = "search-render" id = "search-render">
   <%= render "search" %>
-
+  </div>
 <% end %>
 <%= render "shared/footer" %>
