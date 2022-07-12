@@ -45,10 +45,10 @@
 <%# カレンダー %>
     <div class = "calendar-main">
       <%= month_calendar events: @plans do |date, plans| %>
-        <%= date.day %>
+        <%= date.day %><br>
 
         <% plans.each do |plan| %>
-         <%= link_to plan.item, plans_path %>
+         <%= link_to plan.item, plans_path %><br>
         <% end %>
       <% end %>
     </div>

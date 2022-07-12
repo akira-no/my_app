@@ -22,7 +22,9 @@
               <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
                 <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
               <% else %>
+               <div class = "calendar-div">
                 <% passed_block.call day, sorted_events.fetch(day, []) %>
+               </div>
               <% end %>
             <% end %>
           <% end %>

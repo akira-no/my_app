@@ -60,7 +60,7 @@ a{
 
 .header-title{
   height: 100%;
-  width: calc(100vw - (400px + 400px));
+  width: calc(100vw - (200px + 200px));
   text-align: center;
   line-height: 60px;
   font-size: 40px;

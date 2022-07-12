@@ -25,22 +25,22 @@
   display: none;
 }
 
-
-
-
 /* カレンダー */
 .simple-calendar{
-  height: 500px;
-  width: calc(100vw - 250px);
+  height: 600px;
+  width: calc(100vw - 200px);
   padding: 20px 0 0 0;
   background-color: rgb(200, 200, 195);
 }
-
 .calendar-heading{
   text-align: center;
   background-color: rgb(225, 229, 223);
 }
-
+.calendar-div{
+  height: 100px;
+  width: 150px;
+  overflow: auto;
+}
 #tagList{
   display: none;
 }
