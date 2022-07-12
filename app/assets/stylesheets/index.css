@@ -4,10 +4,16 @@
 }
 
 /* 左側 */
+.main-left{
+  height: 600px;
+  width: 200px;
+  background-color: aquamarine;
+}
 .search-main{
-  height: 500px;
+  height: 570px;
   width: 200px;
   padding: 0 0 0 20px;
+  overflow: auto;
   background-color: rgb(247, 241, 241);
 }
 .search-field{
@@ -27,8 +33,9 @@
 
 /* カレンダー */
 .simple-calendar{
-  height: 600px;
+  height: 630px;
   width: calc(100vw - 200px);
+  min-width: 700px;
   padding: 20px 0 0 0;
   background-color: rgb(200, 200, 195);
 }
@@ -37,8 +44,8 @@
   background-color: rgb(225, 229, 223);
 }
 .calendar-div{
-  height: 100px;
-  width: 150px;
+  height: 95px;
+  width: 100px;
   overflow: auto;
 }
 #tagList{

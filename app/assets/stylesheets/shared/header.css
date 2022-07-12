@@ -17,6 +17,7 @@ a{
 .header-left{
   height: 100%;
   width: 200px;
+  min-width: 200px;
   line-height: 60px;
   text-align: center;
   font-size: 20px;
@@ -61,6 +62,7 @@ a{
 .header-title{
   height: 100%;
   width: calc(100vw - (200px + 200px));
+  min-width: 590px;
   text-align: center;
   line-height: 60px;
   font-size: 40px;
@@ -71,6 +73,7 @@ a{
 .header-right{
   height: 100%;
   width: 200px;
+  min-width: 200px;
   line-height: 60px;
   text-align: center;
   font-size: 20px;

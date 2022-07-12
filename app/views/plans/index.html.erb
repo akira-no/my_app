@@ -11,6 +11,7 @@
   <%# 検索フォーム %>
   <%# <form> %>
   <div class = "main-full">
+    <div class = "main-left>
    <%= search_form_for @q, url: plans_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-field">
      <%= f.text_field :item_cont, placeholder: '詳細で検索', class: "search-text", id: "search-text" %>
@@ -38,6 +39,7 @@
      <% end %>
      <label><input type="checkbox" id="check" onclick="checkdiv(this,'checkBox')" /><%= tag.tag_name %></label>
      <div id="checkBox" style="display:none;">表示！</div>
+    </div>
     </div>
   <%# </form> %>
 
