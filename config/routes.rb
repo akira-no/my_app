@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :plans do
     resources :searches, only: :index, defaults: { format: :json }
   end
+  resources :users, only: :show
   resources :plans, only: [:index, :new, :create] do
     collection do
       get 'search'
