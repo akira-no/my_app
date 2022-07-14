@@ -52,7 +52,7 @@
     </div>
     <ul class = "search-field-ul">
     <% @plans_s.each do |plan|%>
-     <%= render partial: 'plan', locals: { item: plan.item } %>
+     <%= render partial: 'plan', locals: { item: plan.item, start_time: plan.start_time } %>
      <% end %>
     </ul>
   </div>

@@ -39,6 +39,7 @@
   height: 500px;
   width: 100vw;
   padding: 0 200px;
+  overflow-y: auto; 
   background-color: rgb(217, 226, 234);
 }
 .search-field{
@@ -49,11 +50,20 @@
   text-align: center;
   background-color: rgb(210, 234, 242);
 }
+.search-field-ul{
+  padding: 0 100px;
 
-.search{
-  height: 100px;
-  width: 100px;
+}
+.search-field-ul li{
+
+  height: 30px;
+  width: 800px;
+  display: flex;
   background-color: red;
+}
+.search_time{
+  width: 200px;
+  background-color: blue;
 }
   /* .signed-out-ver{
     height: 500px;
