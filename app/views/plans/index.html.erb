@@ -51,13 +51,12 @@
      <%= text_field_tag :item, "", class: "js-text_field", placeholder: "詳細で検索" %>
     </div>
     <ul class = "search-field-ul">
-    <% @plans_s.each do |plan|%>
-     <%= render partial: 'plan', locals: { item: plan.item, start_time: plan.start_time } %>
+     <% @plans_s.each do |plan|%>
+      <%= render partial: 'plan', locals: { item: plan.item, start_time: plan.start_time } %>
      <% end %>
     </ul>
   </div>
 
-
-
 <% end %>
+
 <%= render "shared/footer" %>
