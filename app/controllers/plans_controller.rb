@@ -12,6 +12,7 @@ class PlansController < ApplicationController
     end
     @tags = Tag.all
     @categories = Category.all
+    @plans_s = Plan.where('item LIKE(?)', "%#{params[:item]}%")
   end
 
   def new

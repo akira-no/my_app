@@ -74,8 +74,20 @@
 
 
 
-  <div class = "search-render" id = "search-render">
+  <%# <div class = "search-render" id = "search-render"> %>
   <%= render "search" %>
+  <%# </div> %>
+
+  <div class = "search-field-main">
+   <%= text_field_tag :item, "", class: "js-text_field", placeholder: "詳細で検索" %>
+    <ul class = "search-field-ul">
+    <% @plans_s.each do |plan|%>
+     <%= render partial: 'plan', locals: { item: plan.item } %>
+     <% end %>
+    </ul>
   </div>
+
+
+
 <% end %>
 <%= render "shared/footer" %>

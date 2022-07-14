@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     sign_up: ''
   }
   root "plans#index"
+  namespace :plans do
+    resources :searches, only: :index, defaults: { format: :json }
+  end
   resources :plans, only: [:index, :new, :create] do
     collection do
       get 'search'

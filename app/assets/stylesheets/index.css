@@ -30,6 +30,11 @@
 .search-render{
   display: none;
 }
+.search{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
 
 /* カレンダー */
 .simple-calendar{
@@ -46,7 +51,7 @@
 .calendar-div{
   height: 95px;
   width: 100px;
-  overflow: auto;
+  overflow-y: auto;
 }
 #tagList{
   display: none;
