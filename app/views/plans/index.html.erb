@@ -8,21 +8,9 @@
   </div>
 <% else %>
 
-  <%# 検索フォーム %>
-  <%# <form> %>
+    <%# 検索フォーム %>
   <div class = "main-full">
     <div class = "main-left">
-   <%= search_form_for @q, url: plans_path, html: {id: "detailed-search-form"} do |f| %>
-    <div class="search-field">
-     <%= f.text_field :item_cont, placeholder: '詳細で検索', class: "search-text", id: "search-text" %>
-     <%= f.submit '検索', id: "submit" %>
-    </div>
-   <% end %>
-
-
-
-  
-    <div class = "search-main">
      <% @categories.each do |category| %>
       <div class = "form-check">
         <input class = "form-check-input" type = "radio" name = "maker" value = "category_name">
@@ -40,41 +28,28 @@
      <label><input type="checkbox" id="check" onclick="checkdiv(this,'checkBox')" /><%= tag.tag_name %></label>
      <div id="checkBox" style="display:none;">表示！</div>
     </div>
-    </div>
-  <%# </form> %>
+   <%# </検索フォーム> %>
 
-
-<%# カレンダー %>
+   <%# カレンダー %>
     <div class = "calendar-main">
-      <%= month_calendar events: @plans do |date, plans| %>
-        <%= date.day %><br>
-
-        <% plans.each do |plan| %>
-         <%= link_to plan.item, plans_path %><br>
-        <% end %>
+    <%= month_calendar events: @plans do |date, plans| %>
+      <%= date.day %><br>
+      <% plans.each do |plan| %>
+      <%= link_to plan.item, plans_path %><br>
       <% end %>
+    <% end %>
     </div>
   </div>
+    <%# カレンダー %>
 
 
 
 
-
-<%# <label><input class = "checkbox" type = "checkbox" name = "tag-chack" value = "1" checked>1</label> %>
-
-
-
-
-
-
-
-
-  <%# <div class = "search-render" id = "search-render"> %>
-  <%= render "search" %>
-  <%# </div> %>
-
+  <%# <label><input class = "checkbox" type = "checkbox" name = "tag-chack" value = "1" checked>1</label> %>
   <div class = "search-field-main">
-   <%= text_field_tag :item, "", class: "js-text_field", placeholder: "詳細で検索" %>
+    <div class="search-field">
+     <%= text_field_tag :item, "", class: "js-text_field", placeholder: "詳細で検索" %>
+    </div>
     <ul class = "search-field-ul">
     <% @plans_s.each do |plan|%>
      <%= render partial: 'plan', locals: { item: plan.item } %>

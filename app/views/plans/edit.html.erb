@@ -1,6 +1,0 @@
-<%= form_with model: @plan_tag, url: plan_path(@plan_tag.id), method: :patch, local: true do |f| %>
-  かて<%= f.text_area :category %>
-  item<%= f.text_area :item %>
-  <%= f.date_select :start_time %>
-  おす<%= f.submit %>
-<% end %>

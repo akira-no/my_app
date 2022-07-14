@@ -5,35 +5,14 @@
 
 /* 左側 */
 .main-left{
-  height: 600px;
-  width: 200px;
-  background-color: aquamarine;
-}
-.search-main{
-  height: 570px;
+  height: 630px;
   width: 200px;
   padding: 0 0 0 20px;
   overflow: auto;
   background-color: rgb(247, 241, 241);
 }
-.search-field{
-  height: 60px;
-  width: 200px;
-  font-size: 14px;
-  line-height: 60px;
-  padding: 0 5px;
-  background-color: rgb(210, 234, 242);
-}
-.search-text{
-  width: 150px;
-}
-.search-render{
-  display: none;
-}
-.search{
-  height: 100px;
-  width: 100px;
-  background-color: red;
+#tagList{
+  /* display: none; */
 }
 
 /* カレンダー */
@@ -50,14 +29,32 @@
 }
 .calendar-div{
   height: 95px;
-  width: 100px;
+  width: 150px;
   overflow-y: auto;
-}
-#tagList{
-  display: none;
+  overflow-x: hidden;
 }
 
+/* 詳細検索 */
+.search-field-main{
+  height: 500px;
+  width: 100vw;
+  padding: 0 200px;
+  background-color: rgb(217, 226, 234);
+}
+.search-field{
+  height: 60px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 60px;
+  text-align: center;
+  background-color: rgb(210, 234, 242);
+}
 
+.search{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
   /* .signed-out-ver{
     height: 500px;
     width: 100vw;
