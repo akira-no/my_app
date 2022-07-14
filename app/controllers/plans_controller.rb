@@ -10,7 +10,6 @@ class PlansController < ApplicationController
     unless params[:q].blank?
       render json: { post: @plans_search }
     end
-    @tags = Tag.all
     @categories = Category.all
     @plans_s = Plan.where('item LIKE(?)', "%#{params[:item]}%")
   end
