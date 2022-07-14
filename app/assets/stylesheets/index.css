@@ -30,6 +30,7 @@
 .calendar-div{
   height: 95px;
   width: 150px;
+  font-size: 15px;
   overflow-y: auto;
   overflow-x: hidden;
 }
