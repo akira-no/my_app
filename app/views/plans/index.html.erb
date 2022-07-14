@@ -12,20 +12,24 @@
   <div class = "main-full">
     <div class = "main-left">
      <% @categories.each do |category| %>
+      <ul class = "category-check-box">
       <div class = "form-check">
         <input class = "form-check-input" type = "radio" name = "maker" value = "category_name">
         <label class = "form-check-label"><%= category.category_name %></label>
       </div>
       <% category.tags.uniq.each do |tag| %>
+        <li class = "tag-check-box">
         <div id = "tagList">
           <div class = "form-check">
             <input class = "form-check-input" type = "checkbox" value = "tag_name" checked>
             <label class = "form-check-label"><%= tag.tag_name %></label>
           </div>
         </div>
+        </li>
       <% end %>
      <% end %>
     </div>
+    </ul>
    <%# </検索フォーム> %>
 
    <%# カレンダー %>
