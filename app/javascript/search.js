@@ -16,7 +16,7 @@ window.addEventListener("load", function() {
 
         $(data).each(function(i,plan) {
           $('.search-field-ul').append(
-            `<li class = "search">${plan.start_time}${plan.item}</li>`
+            `<li class = "search"><div class = "search_time">${plan.start_time}</div>${plan.item}</li>`
           )
         });
       })
