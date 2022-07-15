@@ -35,11 +35,19 @@ https://github.com/akira-no/my_app
 # 実装予定の機能
 現在、検索機能を実装中です。
 
-# データベース設計
+<!-- # データベース設計 -->
 
-！[e](https://i.gyazo.com/2762bca54adf52aba89f61a8ff398917.png)
+<!-- # 画面遷移図 -->
 
+# 開発環境
+・フロントエンド
+・バックエンド
+・インフラ
+・テスト
+・テキストエディタ
+・タスク管理
 
+<!-- # ローカルでの動作方法 -->
 
+<!-- # 工夫したポイント -->
 
-[![Image from Gyazo](https://i.gyazo.com/6a7301346b724dc50a29fe21c254fdda.gif)](https://gyazo.com/6a7301346b724dc50a29fe21c254fdda)
