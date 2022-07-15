@@ -1,0 +1,64 @@
+<%= render "shared/header" %>
+
+<% unless user_signed_in? %>
+  <div class = "signed-out-ver">
+    <%= month_calendar do |date| %>
+      <%= date.day %>
+    <% end %>
+  </div>
+<% else %>
+
+    <%# 検索フォーム %>
+  <div class = "main-full">
+    <div class = "main-left">
+     <% @categories.each do |category| %>
+      <ul class = "category-check-box">
+      <div class = "form-check">
+        <input class = "form-check-input" type = "radio" name = "maker" value = "category_name">
+        <label class = "form-check-label"><%= category.category_name %></label>
+      </div>
+      <% category.tags.uniq.each do |tag| %>
+        <li class = "tag-check-box">
+        <div id = "tagList">
+          <div class = "form-check">
+            <input class = "form-check-input" type = "checkbox" value = "tag_name" checked>
+            <label class = "form-check-label"><%= tag.tag_name %></label>
+          </div>
+        </div>
+        </li>
+      <% end %>
+     <% end %>
+    </div>
+    </ul>
+   <%# </検索フォーム> %>
+
+   <%# カレンダー %>
+    <div class = "calendar-main">
+    <%= month_calendar events: @plans do |date, plans| %>
+      <%= date.day %><br>
+      <% plans.each do |plan| %>
+      <%= link_to plan.item, plans_path %><br>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+    <%# カレンダー %>
+
+
+
+
+  <%# <label><input class = "checkbox" type = "checkbox" name = "tag-chack" value = "1" checked>1</label> %>
+  <div class = "search-field-main">
+    <div class="search-field">
+     <%= text_field_tag :item, "", class: "js-text_field", placeholder: "詳細で検索" %>
+    </div>
+    <ul class = "search-field-ul">
+     <% @plans_s.each do |plan|%>
+      <%= render partial: 'plan', locals: { item: plan.item, start_time: plan.start_time } %>
+     <% end %>
+    </ul>
+  </div>
+
+<% end %>
+
+<%= render "shared/footer" %>

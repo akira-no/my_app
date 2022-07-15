@@ -1,26 +1,95 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class = "devise-main">
+  <div class = "session-main">
+    <div class = "session-left">
+      <h2>ログイン</h2>
     </div>
-  <% end %>
+    <div class = "session-right">
+     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class = "field-main">
+        <div class = "field-left">
+         <%= f.label :email %>
+        </div>
+        <div class = "field-right">
+         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+      <div class = "field-main">
+        <div class = "field-left">
+         <%= f.label :password %>
+        </div>
+        <div class = "field-right">
+         <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="actions">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    <% end %>
+    </div>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  <div class = "session-main">
+    <div class = "session-left">
+      <h2>新規登録</h2>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    </div>
+    <div class = "session-right">
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <div class= "field-main">
+        <div class = "field-left">
+         <%= f.label :nickname %>
+        </div>
+        <div class = "field-right">
+         <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+        </div>
+      </div>
+
+      <div class= "field-main">
+        <div class = "field-left">
+         <%= f.label :email %>
+        </div>
+        <div class = "field-right">
+         <%= f.email_field :email, autocomplete: "email" %>
+        </div>
+      </div>
+
+      <div class= "field-main">
+        <div class = "field-left">
+         <%= f.label :password %>
+         <% if @minimum_password_length %>
+         <em>(<%= @minimum_password_length %> characters minimum)</em>
+         <% end %>
+        </div>
+        <div class = "field-right">
+         <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+      </div>
+
+      <div class= "field-main">
+        <div class = "field-left">
+         <%= f.label :password_confirmation %>
+        </div>
+        <div class = "field-right">
+         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+     <% end %>
+    </div>
+  </div>
+</div>
+<div class = "devise-footer">
+  <%= link_to "トップページに戻る", root_path %>
+  <%# <%= render "devise/shared/links" %> 
+</div>

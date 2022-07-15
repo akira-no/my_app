@@ -1,0 +1,32 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<div class = "header-main">
+  <div class = "header-left" id = "register">
+    新 規 登 録
+  </div>
+  <%= form_with model: @plan_tag, url: plans_path, method: :post, local: true do |f| %>
+   <ul class = "register-full" id = "register-main">
+    <li class = "register-text">カテゴリー</li>
+    <li><%= f.text_field :category_name, class: "register-field" %></li>
+    <li class = "register-text">タグ</li>
+    <li><%= f.text_field :tag_name, class: "register-field" %></li>
+    <li class = "register-area">詳細</li>
+    <li><%= f.text_area :item, class: "register-field" %></li>
+    <li class = "date-field"><%= f.date_select :start_time %></li>
+    <li><%= f.submit value: " 登 録 " %></li>
+   </ul>
+  <% end %>
+  <div class = "header-title">
+    memoapp
+  </div>
+  <div class = "header-right", id = "user">
+   <% if user_signed_in? %>
+    <%= link_to current_user.nickname, "users/#{current_user.id}", id: "user-name" %>
+    <ul class = "user-menu">
+      <li><%= link_to "マイページ", "users/#{current_user.id}" %></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
+    </ul>
+   <% else %>
+    <%= link_to "ログイン", new_user_session_path, class: "login" %>
+   <% end %>
+  </div>
+</div>

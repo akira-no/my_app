@@ -1,0 +1,11 @@
+*{
+  box-sizing: border-box;
+}
+
+.footer{
+  height: 30px;
+  width: 100vw;
+  text-align: center;
+  line-height: 30px;
+  background-color: aqua;
+}
